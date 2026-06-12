@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizza AR Menu</title>
+
+    <script type="module"
+    src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js">
+    </script>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: #f5f5f5;
+        }
+
+        h1 {
+            margin-bottom: 10px;
+        }
+
+        .price {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        model-viewer {
+            width: 100%;
+            height: 500px;
+            background: white;
+            border-radius: 10px;
+        }
+
+        .info {
+            margin-top: 15px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Margherita Pizza</h1>
+    <div class="price">₹299</div>
+
+    <model-viewer
+        src="models/pizza.glb"
+        ios-src="models/pizza.usdz"
+        alt="3D Pizza Model"
+        ar
+        ar-modes="scene-viewer quick-look webxr"
+        camera-controls
+        auto-rotate
+        shadow-intensity="1"
+        exposure="1">
+
+        <button slot="ar-button"
+            style="
+            background:#28a745;
+            color:white;
+            border:none;
+            padding:12px 20px;
+            border-radius:8px;
+            cursor:pointer;
+            font-size:16px;">
+            🍕 View Pizza in AR
+        </button>
+
+    </model-viewer>
+
+    <div class="info">
+        Tap <b>View Pizza in AR</b> and point your camera at a table to place the pizza in the real world.
+    </div>
+
+</body>
+</html>
